@@ -1,0 +1,13 @@
+{
+  "Boilerplate Component": {
+    "prefix": "select",
+    "description": "Basic svelte boilerplate",
+    "body": [
+      "<a-select default-value='lucy' style='width: 120px' @change='handleChange'>",
+      "  <a-select-option value='jack'>", 
+      "    Jack",
+      "  </a-select-option>",
+      "</a-select>"
+    ]
+  }
+}
