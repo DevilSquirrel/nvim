@@ -1,6 +1,13 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "vue", "scss" } },
+    opts = {
+      highlight = {
+        enable = true,
+        disable = { "html" },
+      },
+      indent = { enable = true },
+      ensure_installed = { "vue", "scss" },
+    },
   },
 }
