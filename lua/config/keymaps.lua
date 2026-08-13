@@ -6,3 +6,4 @@ local keymap = vim.keymap
 keymap.set("i", "jk", "<esc>")
 keymap.set("i", "<esc>", "<nop>")
 keymap.set("v", "<C-j>", "yP")
+keymap.set("n", "H", "H", { desc = "Go to top of visible screen" })

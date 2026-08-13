@@ -1,5 +1,6 @@
 return {
-  "echasnovski/mini.files",
+  "nvim-mini/mini.files",
+  -- "echasnovski/mini.files",
   keys = {
     {
       "<leader>e",
@@ -15,12 +16,12 @@ return {
       end,
       desc = "Open mini.files (cwd)",
     },
-    {
-      "<leader>fm",
-      function()
-        require("mini.files").open(LazyVim.root(), true)
-      end,
-      desc = "Open mini.files (root)",
-    },
+    -- {
+    --   "<leader>fm",
+    --   function()
+    --     require("mini.files").open(LazyVim.root(), true)
+    --   end,
+    --   desc = "Open mini.files (root)",
+    -- },
   },
 }
