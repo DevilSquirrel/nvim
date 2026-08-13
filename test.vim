@@ -1,4 +1,4 @@
-echo "hello word !"
+echo "hello word!11"
 " echo $MYVIMRC
 " set number
 " set numberwidth=4
@@ -26,3 +26,14 @@ echo "hello word !"
 "     autocmd FileType vim setlocal foldmethod=marker
 " augroup END
 " }}}
+
+nnoremap <leader>ev :vsplit C:\Users\Administrator\AppData\Local\nvim\test.vim<cr>
+nnoremap <leader>es :source C:\Users\Administrator\AppData\Local\nvim\test.vim<cr>
+" 缩写
+iabbrev waht what
+" inoremap ssig -- <cr>Steve Losh<cr>steve@stevelosh.com
+" iabbrev ssig -- <cr>Steve Losh<cr>steve@stevelosh.com
+" iunmap ssig
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+vnoremap <leader>" <esc>a"<esc>gvo<esc>i"<esc>gvoll<esc>
+vnoremap <leader>' <esc>a'<esc>gvo<esc>i'<esc>gvoll<esc>
