@@ -8,15 +8,29 @@ return {
   -- },
   --
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim", opts = {
-    transparent_mode = true,
-  } },
+  -- { "ellisonleao/gruvbox.nvim", opts = {
+  --   transparent_mode = true,
+  -- } },
 
   -- Configure LazyVim to load gruvbox
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "gruvbox",
+  --   },
+  -- },
+  {
+    "catppuccin",
+    priority = 1000,
+    opts = {
+      flavour = "latte", -- latte, frappe, macchiato, mocha
+      transparent_background = true,
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "catppuccin-mocha", -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
     },
   },
 }

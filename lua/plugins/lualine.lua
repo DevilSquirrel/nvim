@@ -114,7 +114,7 @@ return {
 
     table.insert(opts.sections.lualine_x, {
       function()
-        return "😄" .. "豫川"
+        return "😄你好[刘豫川]"
       end,
     })
     return opts
