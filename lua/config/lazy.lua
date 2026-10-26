@@ -48,9 +48,9 @@ require("lazy").setup({
         "tutor",
         "zipPlugin",
       },
-      paths = {
-        "E:\\luaPlugin\\lazyPlugin\\nvimPlugin\\lua\\",
-      },
+      -- paths = {
+      --   "E:\\luaPlugin\\lazyPlugin\\nvimPlugin\\lua\\",
+      -- },
     },
   },
 })
