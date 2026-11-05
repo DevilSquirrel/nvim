@@ -1,0 +1,19 @@
+{
+  "name": "personal-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./layui/html.json"
+      },
+      {
+        "language": "html",
+        "path": "./layui/javascript.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./layui/javascript.json"
+      }
+    ]
+  }
+}

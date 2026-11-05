@@ -1,0 +1,98 @@
+{
+  "layuiSubmit": {
+    "prefix": "submit",
+    "description": "layui表单提交",
+    "body": [
+      "// 表单提交事件",
+      "form.on('submit(formSubmit)', function (data) {",
+      "  layer.load(2);",
+      "  $.post(url, data.field, function (res) {",
+      "    layer.closeAll('loading');",
+      "    if (res.code === 200) {",
+      "      top.layer.msg(res.msg, {icon: 1});",
+      "      admin.putTempData('formOk', true);  // 操作成功刷新表格",
+      "      // 关闭当前iframe弹出层",
+      "      parent.layer.close(parent.layer.getFrameIndex(window.name));",
+      "    } else {",
+      "      top.layer.msg(res.msg, {icon: 2});",
+      "    }",
+      "  });",
+      "  return false;",
+      "});"
+    ]
+  },
+  "layuiUse": {
+    "prefix": "layui.use",
+    "description": "layui初始闭包",
+    "body": [
+      "layui.use(['layer', 'form', 'admin'], function () {",
+      "  var \\$ = layui.jquery;",
+      "  var layer = layui.layer;",
+      "  var form = layui.form;",
+      "  var admin = layui.admin;",
+      "  ",
+      "  loadPage()",
+      "  function loadPage(){",
+      "    $0",
+      "  }",
+      "});"
+    ]
+  },
+  "layuiTable": {
+    "prefix": "table.render",
+    "description": "layui调用表格",
+    "body": [
+      "table.render({",
+      "  elem: '#mainTable'",
+      "  ,toolbar: '#toolbarDemo'",
+      "  ,method: 'POST'",
+      "  ,where: {}",
+      "  ,defaultToolbar: []",
+      "  ,url: '\\${ctxPath}/'",
+      "  ,page: true",
+      "  ,height: 'full-430'",
+      "  ,cols: [[",
+      "     {type: 'numbers', title: '序号' },",
+      "     {type: 'checkbox' },",
+      "     { title: '姓名', field: 'field', align: 'center', valign: 'middle', width: 80, event: 'view', ",
+      "       templet: function (d) {",
+      "         return \"<span style='color:#1b6aad'>' + d.xm + '</span>\"",
+      "       }",
+      "     },",
+      "   ]]",
+      "  ,done: function (res, curr, count) {",
+      "     var data = res.data",
+      "  }",
+      "})"
+    ]
+  },
+  "layuiOpen": {
+    "prefix": "layer.open",
+    "description": "layui调用弹出",
+    "body": [
+      "top.layui.admin.open({",
+      "  type: 2,",
+      "  title: '',",
+      "  area: ['1350px', '780px'],",
+      "  content: '\\${ctxPath}/',",
+      "  end: function () {",
+      "    admin.getTempData('formOk') && table.reloadData('mainTable');",
+      "  }",
+      "});"
+    ]
+  },
+  "ajaxPost": {
+    "prefix": "post",
+    "description": "ajax post请求",
+    "body": [
+      "\\$.post(\"\\${ctxPath}$1\", {$2}, function (res) {",
+      "  if (res.code == 200) {",
+      "    var data = res.data;",
+      "    $0",
+      "  } else {",
+      "    layer.msg(res.msg, {icon: 2})",
+      "  }",
+      "});"
+    ]
+  }
+}

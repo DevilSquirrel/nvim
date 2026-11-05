@@ -10,4 +10,6 @@
 -- vim.cmd("set runtimepath+=E:\\luaPlugin\\lazyPlugin\\nvimPlugin\\lua")
 vim.g.lazyvim_mini_snippets_in_completion = true
 vim.g.lazyvim_eslint_auto_format = false
+vim.g.autoformat = false
 vim.g.snacks_animate = false
+-- vim.opt.clipboard = ""

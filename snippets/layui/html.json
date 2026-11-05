@@ -1,0 +1,119 @@
+{
+  "layuiForm": {
+    "prefix": "form",
+    "description": "layui中的form表单",
+    "body": [
+      "<form class=\"layui-form\">",
+      "  <div class=\"layui-form-item\">",
+      "    <label class=\"layui-form-label\">${1:输入框}</label>",
+      "    <div class=\"layui-input-block\">",
+      "      <input type=\"text\" name=\"title\" lay-verify=\"${2:required}\" placeholder=\"请输入$1\" autocomplete=\"off\" class=\"layui-input\">",
+      "    </div>",
+      "  </div>$0",
+      "  <div class=\"layui-form-item text-center\">",
+      "    <button class=\"layui-btn\" lay-filter=\"formSubmit\" lay-submit>保存</button>",
+      "    <button class=\"layui-btn layui-btn-primary\" type=\"button\" ew-event=\"closeDialog\">关闭</button>",
+      "  </div>",
+      "</form>"
+    ]
+  },
+  "layuiFormInput": {
+    "prefix": "input",
+    "description": "layui表单中的输入框",
+    "body": [
+      "  <div class=\"layui-form-item\">",
+      "    <label class=\"layui-form-label\">${1:输入框}</label>",
+      "    <div class=\"layui-input-block\">",
+      "      <input type=\"text\" name=\"$2\" lay-verify=\"${3:required}\" placeholder=\"请输入$1\" autocomplete=\"off\" class=\"layui-input\">",
+      "    </div>",
+      "  </div>$0"
+    ]
+  },
+  "layuiFormTextarea": {
+    "prefix": "textarea",
+    "description": "layui表单中多行文本",
+    "body": [
+      "  <div class=\"layui-form-item\">",
+      "    <label class=\"layui-form-label\">${1:输入框}</label>",
+      "    <div class=\"layui-input-block\">",
+      "      <textarea name=\"$2\" placeholder=\"请输入${1:输入框}\" class=\"layui-textarea\"></textarea>",
+      "    </div>",
+      "  </div>$0"
+    ]
+  },
+  "layuiFormSelect": {
+    "prefix": "select",
+    "description": "layui表单中下拉框",
+    "body": [
+      "<div class=\"layui-form-item\">",
+      "  <label class=\"layui-form-label\">${1:下拉列表}</label>",
+      "  <div class=\"layui-input-block\">",
+      "    <select name=\"city\" lay-verify=\"${2:required}\">",
+      "      <option value=\"\">$3</option>",
+      "      <option value=\"$4\">$5</option>",
+      "    </select>",
+      "  </div>",
+      "</div>$0"
+    ]
+  },
+  "layuiFormRadio": {
+    "prefix": "radio",
+    "description": "layui表单中单选",
+    "body": [
+      "<div class=\"layui-form-item\">",
+      "  <label class=\"layui-form-label\">${1:单选框}</label>",
+      "  <div class=\"layui-input-block\">",
+      "    <input type=\"radio\" name=\"${2:name}\" value=\"${3:1}\" title=\"${4:label}\" checked>",
+      "  </div>",
+      "</div>$0"
+    ]
+  },
+  "layuiFormCheckbox": {
+    "prefix": "checkbox",
+    "description": "layui表单中多选",
+    "body": [
+      "<div class=\"layui-form-item\">",
+      "  <label class=\"layui-form-label\">${1:多选框}</label>",
+      "  <div class=\"layui-input-block\">",
+      "    <input type=\"checkbox\" name=\"${2:name}\" value=\"${3:1}\" title=\"${4:label}\" lay-skin=\"primary\" checked>",
+      "  </div>",
+      "</div>$0"
+    ]
+  },
+  "layuiSubmit": {
+    "prefix": "submit",
+    "description": "layui表单提交",
+    "body": [
+      "// 表单提交事件",
+      "form.on('submit(formSubmit)', function (data) {",
+      "  layer.load(2);",
+      "  $.post(url, data.field, function (data) {",
+      "    layer.closeAll('loading');",
+      "    if (data.code === 200) {",
+      "      top.layer.msg(data.msg, {icon: 1});",
+      "      admin.putTempData('formOk', true);  // 操作成功刷新表格",
+      "      // 关闭当前iframe弹出层",
+      "      parent.layer.close(parent.layer.getFrameIndex(window.name));",
+      "    } else {",
+      "      top.layer.msg(data.msg, {icon: 2});",
+      "    }",
+      "  });",
+      "  return false;",
+      "});"
+    ]
+  },
+  "layuiCard": {
+    "prefix": "card",
+    "description": "layui卡片",
+    "body": [
+      "<div class=\"layui-fluid\">",
+      "  <div class=\"layui-card\">",
+      "    <div class=\"layui-card-header\">卡片面板</div>",
+      "    <div class=\"layui-card-body\">",
+      "      $0",
+      "    </div>",
+      "  </div>",
+      "</div>"
+    ]
+  }
+}

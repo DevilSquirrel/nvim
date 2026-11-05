@@ -1,6 +1,9 @@
 return {
   "whid",
-  dir = vim.fn.expand("E:/luaPlugin/lazyPlugin/nvimPlugin/whid"),
+  dir = vim.fn.expand("E:/luaPlugin/nvimPlugin/whid"),
+  -- opts = {
+  --   test = "liuyc",
+  -- },
   -- config = function()
   --   require("whid").setup({
   --     -- 你的配置
