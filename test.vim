@@ -138,3 +138,4 @@ function! QuickfixToggle()
     let g:quickfix_is_open=1
   endif
 endfunction
+

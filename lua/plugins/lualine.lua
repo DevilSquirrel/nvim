@@ -12,12 +12,14 @@ return {
 
     local opts = {
       options = {
-        theme = "auto",
+        theme = "wombat",
         globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
       },
       sections = {
-        lualine_a = { "mode" },
+        lualine_a = {
+          "mode",
+        },
         lualine_b = { "branch" },
 
         lualine_c = {
@@ -33,6 +35,9 @@ return {
           },
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path() },
+        },
+        lualine_d = {
+          -- { "searchcount", padding = { left = 0, right = 1 } },
         },
         lualine_x = {
           Snacks.profiler.status(),
@@ -80,12 +85,32 @@ return {
           },
         },
         lualine_y = {
+          { "searchcount", padding = { left = 2, right = 1 } },
           { "progress", separator = " ", padding = { left = 1, right = 0 } },
           { "location", padding = { left = 0, right = 1 } },
+          -- {
+          --   function()
+          --     -- 获取当前 buffer 里的所有行
+          --     local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+          --     -- 把字符串列表变成一个长字符串，用空格分隔
+          --     local content = table.concat(lines, " ")
+          --     -- 对于每个匹配这个模式 `%a+` 的子串，增加单词计数器
+          --     -- 模式 `%a+` 是行中的字母 [a-z][A-Z]
+          --     -- 如果要用字母数字而不是纯字母，用 `%w+`
+          --     local words = 0
+          --     for _ in content:gmatch("%a+") do
+          --       words = words + 1
+          --     end
+          --
+          --     -- 返回单词计数，这样它就会出现在 lualine 里
+          --     -- 如果你想显示 "Word count: 87" 这样的话，写 `return "Word count: " .. words`
+          --     return words
+          --   end,
+          -- },
         },
         lualine_z = {
           function()
-            return " " .. os.date("%R")
+            return " " .. os.date("%Y-%m-%d %H:%M:%S")
           end,
         },
       },
@@ -112,11 +137,11 @@ return {
       -- })
     end
 
-    table.insert(opts.sections.lualine_x, {
-      function()
-        return "😄你好[刘豫川]"
-      end,
-    })
+    -- table.insert(opts.sections.lualine_x, {
+    --   function()
+    --     return "😄你好[刘豫川]"
+    --   end,
+    -- })
     return opts
   end,
 }

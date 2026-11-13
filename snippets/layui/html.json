@@ -7,7 +7,7 @@
       "  <div class=\"layui-form-item\">",
       "    <label class=\"layui-form-label\">${1:输入框}</label>",
       "    <div class=\"layui-input-block\">",
-      "      <input type=\"text\" name=\"title\" lay-verify=\"${2:required}\" placeholder=\"请输入$1\" autocomplete=\"off\" class=\"layui-input\">",
+      "      <input type=\"text\" name=\"title\" lay-verify=\"${2:required}\" placeholder=\"请输入$1\" autocomplete=\"off\" class=\"layui-input\" />",
       "    </div>",
       "  </div>$0",
       "  <div class=\"layui-form-item text-center\">",
@@ -24,7 +24,7 @@
       "  <div class=\"layui-form-item\">",
       "    <label class=\"layui-form-label\">${1:输入框}</label>",
       "    <div class=\"layui-input-block\">",
-      "      <input type=\"text\" name=\"$2\" lay-verify=\"${3:required}\" placeholder=\"请输入$1\" autocomplete=\"off\" class=\"layui-input\">",
+      "      <input type=\"text\" name=\"$2\" lay-verify=\"${3:required}\" placeholder=\"请输入$1\" autocomplete=\"off\" class=\"layui-input\" />",
       "    </div>",
       "  </div>$0"
     ]
@@ -63,7 +63,7 @@
       "<div class=\"layui-form-item\">",
       "  <label class=\"layui-form-label\">${1:单选框}</label>",
       "  <div class=\"layui-input-block\">",
-      "    <input type=\"radio\" name=\"${2:name}\" value=\"${3:1}\" title=\"${4:label}\" checked>",
+      "    <input type=\"radio\" name=\"${2:name}\" value=\"${3:1}\" title=\"${4:label}\" checked />",
       "  </div>",
       "</div>$0"
     ]
@@ -75,7 +75,7 @@
       "<div class=\"layui-form-item\">",
       "  <label class=\"layui-form-label\">${1:多选框}</label>",
       "  <div class=\"layui-input-block\">",
-      "    <input type=\"checkbox\" name=\"${2:name}\" value=\"${3:1}\" title=\"${4:label}\" lay-skin=\"primary\" checked>",
+      "    <input type=\"checkbox\" name=\"${2:name}\" value=\"${3:1}\" title=\"${4:label}\" lay-skin=\"primary\" checked />",
       "  </div>",
       "</div>$0"
     ]

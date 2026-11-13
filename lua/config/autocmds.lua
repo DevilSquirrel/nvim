@@ -9,13 +9,13 @@
 
 -- vim.opt.clipboard = "unnamedplus"
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-  pattern = "*",
-  callback = function()
-    local event = vim.v.event
-    local contents = vim.v.event.regcontents -- 表，每行是一个字符串
-    local text = table.concat(contents, "\n") -- 拼成完整文本
-    print("事件:" .. event.operator)
-    print("复制了内容:" .. text)
-  end,
-})
+-- vim.api.nvim_create_autocmd("TextYankPost", {
+--   pattern = "*",
+--   callback = function()
+--     local event = vim.v.event
+--     local contents = vim.v.event.regcontents -- 表，每行是一个字符串
+--     local text = table.concat(contents, "\n") -- 拼成完整文本
+--     print("事件:" .. event.operator)
+--     print("复制了内容:" .. text)
+--   end,
+-- })
