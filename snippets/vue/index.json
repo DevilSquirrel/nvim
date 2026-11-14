@@ -1,0 +1,129 @@
+{
+  "redirectTo": {
+    "prefix": "uni.redirectTo",
+    "description": "关闭当前页面，跳转到应用内的某个页面。",
+    "body": [
+      "uni.redirectTo({",
+      "  url:'$1'",
+      "})"
+    ]
+  },
+  "navigateTo": {
+    "prefix": "uni.navigateTo",
+    "description": "保留当前页面，跳转到应用内的某个页面，使用uni.navigateBack可以返回到原页面。",
+    "body": [
+      "uni.navigateTo({",
+      "  url:'$1'",
+      "})"
+    ]
+  },
+  "reLaunch": {
+    "prefix": "uni.reLaunch",
+    "description": "关闭所有页面，打开到应用内的某个页面。",
+    "body": [
+      "uni.reLaunch({",
+      "  url:'$1'",
+      "})"
+    ]
+  },
+  "showLoading": {
+    "prefix": "uni.showLoading",
+    "description": "显示loading。",
+    "body": [
+      "uni.showLoading({",
+      "  title:'$1'",
+      "})"
+    ]
+  },
+  "hideLoading": {
+    "prefix": "uni.hideLoading",
+    "description": "关闭loading。",
+    "body": [
+      "uni.hideLoading({",
+      "  title:'$1'",
+      "})"
+    ]
+  },
+  "console": {
+    "prefix": "log",
+    "description": "打印调试",
+    "body": [
+      "console.log('${1:$CLIPBOARD}:',${2:$CLIPBOARD})$0"
+    ]
+  },
+  "scrollView": {
+    "prefix": "scroll-view",
+    "description": "创建一个下划分页列表",
+    "body": [
+      "<!--",
+      "  分页列表页 · uni-app Vue3 <script setup>",
+      "  scroll-view + @scrolltolower 实现下滑加载更多",
+      "-->",
+      "<template>",
+      "  <scroll-view class=\"list\" scroll-y :lower-threshold=\"${1:80}\" @scrolltolower=\"load\">",
+      "    <view v-for=\"item in list\" :key=\"item.${2:id}\">",
+      "      <view>{{ item.${3:name} }}</view>",
+      "      <view>{{ item.${4:desc} }}</view>",
+      "    </view>",
+      "",
+      "    <view v-if=\"loading\">${5:加载中…}</view>",
+      "    <view v-else-if=\"finished\">${6:没有更多了}</view>",
+      "  </scroll-view>",
+      "</template>",
+      "",
+      "<script setup>",
+      "import { ref, onMounted } from 'vue'",
+      "import { onLoad, onReady } from '@dcloudio/uni-app'",
+      "import { useConfigStore } from '@/store'",
+      "",
+      "const config = useConfigStore().config;",
+      "const list = ref([])",
+      "const page = ref(0)",
+      "const pageSize = ${7:10}",
+      "const loading = ref(false)",
+      "const finished = ref(false)",
+      "",
+      "// ${8:换成你的接口：返回 { list, total }}",
+      "const ${9:fetchList} = (p, size) =>",
+      "  new Promise((resolve) => {",
+      "    setTimeout(() => {",
+      "      const total = ${10:57}",
+      "      const rows = []",
+      "      for (let i = 0; i < size; i++) {",
+      "        const id = (p - 1) * size + i + 1",
+      "        if (id > total) break",
+      "        rows.push({ ${2:id}: id, ${3:name}: '第 ' + id + ' 条数据', ${4:desc}: '内容摘要' })",
+      "      }",
+      "      resolve({ list: rows, total })",
+      "    }, ${11:500})",
+      "  })",
+      "",
+      "const load = async () => {",
+      "  if (loading.value || finished.value) return",
+      "  loading.value = true",
+      "  try {",
+      "    const nextPage = page.value + 1",
+      "    const res = await ${9:fetchList}(nextPage, pageSize)",
+      "    const rows = res.list || []",
+      "",
+      "    list.value = list.value.concat(rows)",
+      "    page.value = nextPage",
+      "    finished.value = rows.length < pageSize || list.value.length >= (res.total || 0)",
+      "  } finally {",
+      "    loading.value = false",
+      "  }",
+      "}",
+      "",
+      "onMounted(load)",
+      "</script>",
+      "",
+      "<style scoped>",
+      ".list {",
+      "  height: calc(100vh - var(--window-top, 0px) - var(--window-bottom, 0px));",
+      "}",
+      "</style>",
+      "$0"
+    ]
+  }
+
+}

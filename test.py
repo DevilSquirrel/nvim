@@ -1,2 +1,3 @@
 import sys;
-print("------"+sys.version);
+# vim.
+print("++------"+sys.version);
